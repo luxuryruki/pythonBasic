@@ -92,3 +92,29 @@ menu = tuple(menu)
 print(menu, type(menu))
 menu = set(menu)
 print(menu, type(menu))
+
+#if
+weather = "맑음"
+if weather == "비":
+    print("우산을 챙기세요")
+elif weather == "미세먼지":
+    print("마스크 챙기세요")
+else:
+    print("좋은 하루되세요.")
+
+#for
+for waiting_no in [0,1,2,3,4,5]:
+    print("대기번호 : {0}".format(waiting_no))
+
+for waiting_no in range(1,11):
+    print("대기번호 : {0}".format(waiting_no))
+
+
+# while
+customer = "토르"
+index = 5
+while index >= 1:
+    print("{0} 님, 커피가 준비 되었습니다. {1} 번 남았어요".format(customer, index))
+    index -= 1
+    if index == 0:
+        print("커피는 폐기 처분 되었습니다.")
