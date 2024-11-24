@@ -28,6 +28,7 @@ class CList:
             self.tail.next_node = new_node
             self.head.prev_node = new_node
             self.tail = new_node
+        print(f"CList_Added: {value}")
 
     def read(self, value):
         """값에 해당하는 노드를 반환"""
@@ -43,30 +44,6 @@ class CList:
                 break
 
         return None 
-
-    def remove(self, value):
-        """리스트에서 값을 삭제"""
-        if not self.head:
-            return
-
-        current = self.head
-        while current and current.value != value: # current 값이 Null 아니고 current.value의 값이 value와 같지 않는 동안
-            current = current.next_node
-
-        if not current:  # 삭제할 값이 없는 경우
-            return
-
-        if current == self.head:  # 첫 번째 노드 삭제
-            self.head = current.next_node
-            if self.head:
-                self.head.prev_node = None
-        elif current == self.tail:  # 마지막 노드 삭제
-            self.tail = current.prev_node
-            if self.tail:
-                self.tail.next_node = None
-        else:  # 중간 노드 삭제
-            current.prev_node.next_node = current.next_node
-            current.next_node.prev_node = current.prev_node
 
     def remove(self, value):
         """리스트에서 특정 값을 가진 노드를 삭제"""
@@ -96,7 +73,7 @@ class CList:
                     # 중간 노드 삭제
                     current.prev_node.next_node = current.next_node
                     current.next_node.prev_node = current.prev_node
-                print(f"Removed: {value}")
+                print(f"CList_Removed: {value}")
                 return
             current = current.next_node
             if current == self.head:
